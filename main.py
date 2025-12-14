@@ -18,3 +18,9 @@ async def hello_endpoint():
 async def random_number():
     return {"random_number": random.randint(1, 100)}
 
+
+@app.get("/random-color")
+async def random_color():
+    color = "#{:06x}".format(random.randint(0, 0xFFFFFF))
+    return {"color": color}
+
